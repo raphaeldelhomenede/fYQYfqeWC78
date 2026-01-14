@@ -1,0 +1,28 @@
+\begin{theorem}[Approximation de Newton]
+Soit $f$ une fonction de classe $C^2$. Pour trouver une racine de $f(x) = 0$, on utilise la suite définie par :
+\[ x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)} \]
+cette suite converge vers la solution sous certaines conditions d'initialisation.
+\end{theorem}
+
+\begin{proof}[Preuve par récurrence]
+Montrons par récurrence que la propriété $P(n)$ est vrai pour tout $n \in \mathbb{N}$ :
+\begin{itemize}
+    \item \textbf{Initialisation :} Pour $n=0$, on vérifie que c'est vrai pour $n=1$.
+    \item \textbf{Hérédité :} Supposons $P(n)$ vrai, montrons que $P(n+1)$ est vrai pour tout $n \in \mathbb{N}$
+    \item \textbf{Conclusion :} La propriété est donc vraie pour tout $n$.
+\end{itemize}
+\end{proof}
+
+\begin{theorem}[algorithme de Newton]
+Voici l'algorithme en JavaScript :
+\begin{lstlisting}
+function Newton(f, df, x0, epsilon) {
+    x = x0;
+    while (Math.abs(f(x)) > epsilon) {
+        x = x - f(x) / df(x);
+    }
+    return x;
+}
+\end{lstlisting}
+{\tiny J'ai pris ce langage car c'est celui qui m'intéresse le plus après avoir appris Python.}
+\end{theorem}
